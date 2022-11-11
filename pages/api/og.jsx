@@ -70,7 +70,7 @@ const current = new Date();
       <img
               alt="Vercel"
               height={630}
-              src="http://localhost:3000/madeira.jpg"
+              src="https://og-image-generation-tau.vercel.app/madeira.jpg"
               style={{ margin: '0 0px' }}
               width={1200}
             />
