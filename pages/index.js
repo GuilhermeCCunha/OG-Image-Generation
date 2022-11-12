@@ -11,7 +11,7 @@ export default function HomeScreen() {
             
           }}>
             Home <br/><br/> <a style={{color: '#0070f3',
-            textDecoration: 'none', }} href="/api/og">▶️ Gerar imagem </a>  
+            textDecoration: 'none', }} href="/api/og?message=Hello, World!">▶️ Gerar imagem </a>  
         </div>
     )
 }

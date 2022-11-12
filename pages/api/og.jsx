@@ -23,15 +23,15 @@ const greatVibesFont = fetch(
   new URL('../../fonts/Great_Vibes/GreatVibes-Regular.ttf', import.meta.url)
 ).then((res) => res.arrayBuffer())
 
-export default async function handler () {
+export default async function handler(req, res) {
 
-const montserratFontData = await montserratFont;
-const fuzzyBubblesFontData = await fuzzyBubblesFont;
-const  pressStart2PFontData = await pressStart2PFont;
-const greatVibesFontData = await greatVibesFont;
+  const montserratFontData = await montserratFont;
+  const fuzzyBubblesFontData = await fuzzyBubblesFont;
+  const pressStart2PFontData = await pressStart2PFont;
+  const greatVibesFontData = await greatVibesFont;
 
-const current = new Date();
-  const date = `${String(current.getDate()).padStart(2, '0')}/${String(current.getMonth()+1).padStart(2, '0')}/${current.getFullYear()} 
+  const current = new Date();
+  const date = `${String(current.getDate()).padStart(2, '0')}/${String(current.getMonth() + 1).padStart(2, '0')}/${current.getFullYear()} 
     ${String(current.getHours()).padStart(2, '0')}:${String(current.getMinutes()).padStart(2, '0')}:${String(current.getSeconds()).padStart(2, '0')}`;
 
   return new ImageResponse(
@@ -56,37 +56,37 @@ const current = new Date();
           borderRadius: '100px 100px 100px 100px',
         }}
       > { // 
-        
-        <div
+
+          <div
             style={{
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               justifyItems: 'center',
-              
+
             }}
           >
-         
-      <img
+
+            <img
               alt="Vercel"
               height={630}
               src="https://og-image-generation-tau.vercel.app/madeira.jpg"
               style={{ margin: '0 0px' }}
               width={1200}
             />
-          </div>   }
-     <div
-            style={{
-              position: 'absolute',
-              zIndex: '2',
-              color: '#565656',
-              opacity: '0.8',
-              fontWeight: 'bold',
-              textShadow: '5px 5px 7px rgba(255,255,225,.5)',
-              display: 'flex',
-            }}
-          >
-       Hello, World!   <div
+          </div>}
+        <div
+          style={{
+            position: 'absolute',
+            zIndex: '2',
+            color: '#565656',
+            opacity: '0.8',
+            fontWeight: 'bold',
+            textShadow: '5px 5px 7px rgba(255,255,225,.5)',
+            display: 'flex',
+          }}
+        >
+          {req.nextUrl.searchParams.get('message')}   <div
             style={{
               position: 'absolute',
               fontSize: 28,
@@ -96,8 +96,8 @@ const current = new Date();
               marginTop: '325px',
               marginLeft: '720px',
             }}
-          >{date}</div> 
-       </div>
+          >{date}</div>
+        </div>
       </div>
     ),
     {
